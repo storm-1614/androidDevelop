@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">EmptyViewActivity</string>
+    <string name="firstbutton_text">Button 1</string>
+</resources>
