@@ -110,7 +110,7 @@ override
 `::layout_width` 和 `::layout_height` 的属性都是 `wrap_content` 使得该 textview 视图的宽高会根据内容自适应。  
 后面都还好理解。  
 
-![](1.png)
+![](1.png)  
 这样编译后就可以在左上角显示文本 Text 了。 
 
 在布局文件写好后就是写下 kotlin 代码，主代码在 `MainActivity.kt`内。  

@@ -1,5 +1,7 @@
 package com.example.emptyviewactivity
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
@@ -26,7 +28,13 @@ class MainActivity : AppCompatActivity() {
             insets
         }
         val first_button : Button = findViewById<Button>(R.id.first_button)
-        first_button.setOnClickListener { Toast.makeText(this,"You clicked first button", Toast.LENGTH_SHORT ).show() }
+        first_button.setOnClickListener {
+            Toast.makeText(this,"You clicked first button", Toast.LENGTH_SHORT ).show()
+//            val intent = Intent(Intent.ACTION_DIAL, Uri.parse("tel:2510717129"))
+            val intent = Intent(this, secondActivity::class.java)
+            startActivity(intent)
+
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
