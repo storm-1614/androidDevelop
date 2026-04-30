@@ -29,6 +29,11 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        if (savedInstanceState != null) {
+            val tempData = savedInstanceState.getString("data_key")
+            Log.d(tag, "tempData: $tempData")
+        }
+
         setSupportActionBar(binding.toolbar)
 
         val navHostFragment =
@@ -43,6 +48,12 @@ class MainActivity : AppCompatActivity() {
                 .setAction("Action", null)
                 .setAnchorView(R.id.fab).show()
         }
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        val tempData = "Something you just typed"
+        outState.putString("data_key", tempData)
     }
 
     override fun onStart() {
